@@ -1,0 +1,39 @@
+# Type
+A function check real typeof value in JavaScript.
+
+## Usage
+
+## Support
++ integer
++ float
++ infinity
++ NaN
++ string
++ boolean
++ array
++ object
++ null
++ undefined
++ function
++ symbol
++ map
++ set
++ weakMap
++ weakSet
++ date
++ regExp
++ error
++ promise
++ arrayBuffer
++ dataView
++ int8Array
++ uint8Array
++ uint8ClampedArray
++ int16Array
++ uint16Array
++ int32Array
++ uint32Array
++ float32Array
++ float64Array
++ BigInt64Array
++ BigUint64Array

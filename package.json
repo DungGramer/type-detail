@@ -1,0 +1,12 @@
+{
+  "name": "type-detail",
+  "version": "1.0.1",
+  "description": "A function check real typeof value in JavaScript",
+  "main": "type.js",
+  "scripts": {
+    "test": "jest ./type.test.js"
+  },
+  "keywords": ["type", "typeof"],
+  "author": "DungGramer",
+  "license": "ISC"
+}
