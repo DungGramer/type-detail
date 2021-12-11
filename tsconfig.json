@@ -4,13 +4,9 @@
     "lib": [
       "es6"
     ],
-    "outDir": "./build",
+    "outDir": "./dist",
     "resolveJsonModule": true,
     "strict": true,
-    "types": [
-      "reflect-metadata",
-      "jest"
-    ],
     "esModuleInterop": true,
     "module": "commonjs",
     "moduleResolution": "node",
@@ -21,6 +17,6 @@
     "node_modules", "**/*.spec.ts", "**/*.test.ts"
   ],
   "include": [
-    "./src/**/*"
+    "./type.ts"
   ]
 }

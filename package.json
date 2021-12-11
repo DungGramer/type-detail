@@ -4,9 +4,28 @@
   "description": "A function check real typeof value in JavaScript",
   "main": "type.js",
   "scripts": {
-    "test": "jest ./type.test.js"
+    "test": "jest ./test/type.test.js",
+    "minify": "uglifyjs --compress --mangle --output ./dist/type.min.js -- ./dist/type.js",
+    "build": "tsc --declaration"
   },
-  "keywords": ["type", "typeof"],
+  "keywords": [
+    "type",
+    "typeof",
+    "type-detail"
+  ],
+  "publishConfig": {
+    "registry": "https://npmjs.com/package/type-detail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DungGramer/type-detail"
+  },
+  "bugs": {
+    "url": "https://github.com/DungGramer/type-detail/issues"
+  },
   "author": "DungGramer",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "uglify-js": "^3.14.4"
+  }
 }

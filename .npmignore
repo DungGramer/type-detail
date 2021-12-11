@@ -1,1 +1,4 @@
 tsconfig.json
+.gitignore
+type.test.js
+node_modules

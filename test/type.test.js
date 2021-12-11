@@ -1,4 +1,4 @@
-const type = require('./type.js').default;
+const type = require('../type.js').default;
 
 describe('typeof', () => {
   test('should integer', () => {

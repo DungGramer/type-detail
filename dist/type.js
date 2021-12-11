@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 function isClass(func) {
     return (typeof func === 'function' &&
         /^class\s/.test(Function.prototype.toString.call(func)));
@@ -40,7 +40,7 @@ function type(val) {
                     case val instanceof Date:
                         return 'date';
                     case val instanceof RegExp:
-                        return 'regexp';
+                        return 'regExp';
                     case val instanceof Error:
                         return 'error';
                     case val instanceof Map:
@@ -90,4 +90,4 @@ function type(val) {
         return 'unknown';
     }
 }
-exports["default"] = type;
+exports.default = type;
