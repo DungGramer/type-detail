@@ -17,6 +17,6 @@
     "node_modules", "**/*.spec.ts", "**/*.test.ts"
   ],
   "include": [
-    "./type.ts"
+    "src/type.ts"
   ]
 }

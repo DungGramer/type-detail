@@ -1,4 +1,4 @@
-const type = require('../type.js').default;
+const type = require('../dist/type').default;
 
 describe('typeof', () => {
   test('should integer', () => {
@@ -54,7 +54,7 @@ describe('typeof', () => {
   });
 
   test('should regexp', () => {
-    expect(type(/a/)).toBe('regexp');
+    expect(type(/a/)).toBe('regExp');
   });
 
   test('should error', () => {

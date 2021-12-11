@@ -1,1 +1,93 @@
-"use strict";function isClass(r){return"function"==typeof r&&/^class\s/.test(Function.prototype.toString.call(r))}function isInteger(r){return"number"==typeof r&&isFinite(r)&&Math.floor(r)===r?"integer":"float"}function typeDetail(r){if(null===r)return"null";try{switch(typeof r){case"number":return isNaN(r)?"NaN":isFinite(r)?isInteger(r):"infinity";case"function":return isClass(r)?"class":"function";case"object":switch(!0){case Array.isArray(r)||r instanceof Array:return"array";case r instanceof Function:return"function";case r instanceof Date:return"date";case r instanceof RegExp:return"regExp";case r instanceof Error:return"error";case r instanceof Map:return"map";case r instanceof Set:return"set";case r instanceof WeakMap:return"weakMap";case r instanceof WeakSet:return"weakSet";case r instanceof Promise:return"promise";case r instanceof ArrayBuffer:return"arrayBuffer";case r instanceof Int8Array:return"int8Array";case r instanceof Uint8Array:return"uint8Array";case r instanceof Uint8ClampedArray:return"uint8ClampedArray";case r instanceof Int16Array:return"int16Array";case r instanceof Uint16Array:return"uint16Array";case r instanceof Int32Array:return"int32Array";case r instanceof Uint32Array:return"uint32Array";case r instanceof Float32Array:return"float32Array";case r instanceof Float64Array:return"float64Array";case r instanceof BigInt64Array:return"bigInt64Array";case r instanceof BigUint64Array:return"bigUint64Array";case r instanceof DataView:return"dataView";default:return"object"}default:return Object.prototype.toString.call(r).slice(8,-1).toLowerCase()}}catch(r){return"unknown"}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=typeDetail;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function isClass(func) {
+    return (typeof func === 'function' &&
+        /^class\s/.test(Function.prototype.toString.call(func)));
+}
+function isInteger(value) {
+    if (typeof value === 'number' &&
+        isFinite(value) &&
+        Math.floor(value) === value) {
+        return 'integer';
+    }
+    return 'float';
+}
+function typeDetail(operand) {
+    if (operand === null) {
+        return 'null';
+    }
+    try {
+        switch (typeof operand) {
+            case 'number':
+                if (isNaN(operand)) {
+                    return 'NaN';
+                }
+                if (!isFinite(operand)) {
+                    return 'infinity';
+                }
+                return isInteger(operand);
+            case 'function':
+                if (isClass(operand)) {
+                    return 'class';
+                }
+                return 'function';
+            case 'object':
+                switch (true) {
+                    case Array.isArray(operand) || operand instanceof Array:
+                        return 'array';
+                    case operand instanceof Function:
+                        return 'function';
+                    case operand instanceof Date:
+                        return 'date';
+                    case operand instanceof RegExp:
+                        return 'regExp';
+                    case operand instanceof Error:
+                        return 'error';
+                    case operand instanceof Map:
+                        return 'map';
+                    case operand instanceof Set:
+                        return 'set';
+                    case operand instanceof WeakMap:
+                        return 'weakMap';
+                    case operand instanceof WeakSet:
+                        return 'weakSet';
+                    case operand instanceof Promise:
+                        return 'promise';
+                    case operand instanceof ArrayBuffer:
+                        return 'arrayBuffer';
+                    case operand instanceof Int8Array:
+                        return 'int8Array';
+                    case operand instanceof Uint8Array:
+                        return 'uint8Array';
+                    case operand instanceof Uint8ClampedArray:
+                        return 'uint8ClampedArray';
+                    case operand instanceof Int16Array:
+                        return 'int16Array';
+                    case operand instanceof Uint16Array:
+                        return 'uint16Array';
+                    case operand instanceof Int32Array:
+                        return 'int32Array';
+                    case operand instanceof Uint32Array:
+                        return 'uint32Array';
+                    case operand instanceof Float32Array:
+                        return 'float32Array';
+                    case operand instanceof Float64Array:
+                        return 'float64Array';
+                    case operand instanceof BigInt64Array:
+                        return 'bigInt64Array';
+                    case operand instanceof BigUint64Array:
+                        return 'bigUint64Array';
+                    case operand instanceof DataView:
+                        return 'dataView';
+                    default:
+                        return 'object';
+                }
+            default:
+                return Object.prototype.toString.call(operand).slice(8, -1).toLowerCase();
+        }
+    }
+    catch (e) {
+        return 'unknown';
+    }
+}
+exports.default = typeDetail;
