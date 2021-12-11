@@ -1,2 +1,2 @@
-declare function type(val: any): string;
-export default type;
+declare function typeDetail(val: any): string;
+export default typeDetail;

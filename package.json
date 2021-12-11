@@ -1,11 +1,11 @@
 {
-  "name": "type-detail",
-  "version": "1.0.1",
+  "name": "@dunggramer/type-detail",
+  "version": "1.0.2",
   "description": "A function check real typeof value in JavaScript",
-  "main": "type.js",
+  "main": "type.ts",
   "scripts": {
     "test": "jest ./test/type.test.js",
-    "minify": "uglifyjs --compress --mangle --output ./dist/type.min.js -- ./dist/type.js",
+    "minify": "uglifyjs --compress --mangle --output ./dist/type.js -- ./dist/type.js",
     "build": "tsc --declaration"
   },
   "keywords": [
@@ -14,18 +14,17 @@
     "type-detail"
   ],
   "publishConfig": {
-    "registry": "https://npmjs.com/package/type-detail"
+    "@dunggramer:registry":"https://npm.pkg.github.com"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DungGramer/type-detail"
+    "url": "git://github.com/DungGramer/type-detail.git"
   },
   "bugs": {
     "url": "https://github.com/DungGramer/type-detail/issues"
   },
-  "author": "DungGramer",
-  "license": "ISC",
-  "devDependencies": {
-    "uglify-js": "^3.14.4"
-  }
+  "author": {
+    "name": "DungGramer",
+    "email": "dung.dev.gramer@gmail.com"
+  },
+  "license": "MIT"
 }

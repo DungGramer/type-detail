@@ -1,4 +1,2 @@
-const type = require('./dist/type.min.js');
+export { default as typeDetail } from './dist/type';
 
-exports.type = type;
-module.exports.default = type;

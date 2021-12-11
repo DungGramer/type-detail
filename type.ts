@@ -17,7 +17,7 @@ function isInteger(value: any): string {
   return 'float';
 }
 
-function type(val: any): string {
+function typeDetail(val: any): string {
   if (val === null) {
     return 'null';
   }
@@ -99,4 +99,4 @@ function type(val: any): string {
   }
 }
 
-export default type;
+export default typeDetail;
