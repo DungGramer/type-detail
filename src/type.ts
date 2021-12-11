@@ -1,7 +1,7 @@
-function isClass(func: Function): boolean {
+function defineFunction(func: Function, regex: RegExp): boolean {
   return (
     typeof func === 'function' &&
-    /^class\s/.test(Function.prototype.toString.call(func))
+    regex.test(Function.prototype.toString.call(func))
   );
 }
 
@@ -34,8 +34,14 @@ function typeDetail(operand: any): string {
         return isInteger(operand);
 
       case 'function':
-        if (isClass(operand)) {
+        if (defineFunction(operand, /^class\s/)) {
           return 'class';
+        }
+        if (defineFunction(operand, /^async\s/)) {
+          return 'promise';
+        }
+        if (defineFunction(operand, /function\*\s|\*\w+\s/)) {
+          return 'generator';
         }
         return 'function';
 

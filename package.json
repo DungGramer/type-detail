@@ -1,8 +1,8 @@
 {
   "name": "@dunggramer/type-detail",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A function check real typeof value in JavaScript",
-  "main": "src/type.ts",
+  "main": "index.js",
   "scripts": {
     "test": "jest ./test/type.test.js",
     "minify": "uglifyjs --compress --mangle --output ./dist/type.js -- ./dist/type.js",

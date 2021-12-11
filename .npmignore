@@ -2,3 +2,4 @@ tsconfig.json
 .gitignore
 /test
 /node_modules
+/.github

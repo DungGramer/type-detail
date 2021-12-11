@@ -81,6 +81,14 @@ describe('typeof', () => {
     expect(type(new Promise(() => {}))).toBe('promise');
   });
 
+  test('should generator', () => {
+    expect(type(function* () {})).toBe('generator');
+  });
+  
+  test('should async function', () => {
+    expect(type(async function () {})).toBe('promise');
+  });
+
   test('should arraybuffer', () => {
     expect(type(new ArrayBuffer())).toBe('arrayBuffer');
   });
