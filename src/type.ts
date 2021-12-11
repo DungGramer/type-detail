@@ -17,82 +17,82 @@ function isInteger(value: any): string {
   return 'float';
 }
 
-function typeDetail(val: any): string {
-  if (val === null) {
+function typeDetail(operand: any): string {
+  if (operand === null) {
     return 'null';
   }
 
   try {
-    switch (typeof val) {
+    switch (typeof operand) {
       case 'number':
-        if (isNaN(val)) {
+        if (isNaN(operand)) {
           return 'NaN';
         }
-        if (!isFinite(val)) {
+        if (!isFinite(operand)) {
           return 'infinity';
         }
-        return isInteger(val);
+        return isInteger(operand);
 
       case 'function':
-        if (isClass(val)) {
+        if (isClass(operand)) {
           return 'class';
         }
         return 'function';
 
       case 'object':
         switch (true) {
-          case Array.isArray(val) || val instanceof Array:
+          case Array.isArray(operand) || operand instanceof Array:
             return 'array';
-          case val instanceof Function:
+          case operand instanceof Function:
             return 'function';
-          case val instanceof Date:
+          case operand instanceof Date:
             return 'date';
-          case val instanceof RegExp:
+          case operand instanceof RegExp:
             return 'regExp';
-          case val instanceof Error:
+          case operand instanceof Error:
             return 'error';
-          case val instanceof Map:
+          case operand instanceof Map:
             return 'map';
-          case val instanceof Set:
+          case operand instanceof Set:
             return 'set';
-          case val instanceof WeakMap:
+          case operand instanceof WeakMap:
             return 'weakMap';
-          case val instanceof WeakSet:
+          case operand instanceof WeakSet:
             return 'weakSet';
-          case val instanceof Promise:
+          case operand instanceof Promise:
             return 'promise';
-          case val instanceof ArrayBuffer:
+          case operand instanceof ArrayBuffer:
             return 'arrayBuffer';
-          case val instanceof Int8Array:
+          case operand instanceof Int8Array:
             return 'int8Array';
-          case val instanceof Uint8Array:
+          case operand instanceof Uint8Array:
             return 'uint8Array';
-          case val instanceof Uint8ClampedArray:
+          case operand instanceof Uint8ClampedArray:
             return 'uint8ClampedArray';
-          case val instanceof Int16Array:
+          case operand instanceof Int16Array:
             return 'int16Array';
-          case val instanceof Uint16Array:
+          case operand instanceof Uint16Array:
             return 'uint16Array';
-          case val instanceof Int32Array:
+          case operand instanceof Int32Array:
             return 'int32Array';
-          case val instanceof Uint32Array:
+          case operand instanceof Uint32Array:
             return 'uint32Array';
-          case val instanceof Float32Array:
+          case operand instanceof Float32Array:
             return 'float32Array';
-          case val instanceof Float64Array:
+          case operand instanceof Float64Array:
             return 'float64Array';
-          case val instanceof BigInt64Array:
+          case operand instanceof BigInt64Array:
             return 'bigInt64Array';
-          case val instanceof BigUint64Array:
+          case operand instanceof BigUint64Array:
             return 'bigUint64Array';
-          case val instanceof DataView:
+          case operand instanceof DataView:
             return 'dataView';
           default:
             return 'object';
         }
 
       default:
-        return Object.prototype.toString.call(val).slice(8, -1).toLowerCase();
+        return Object.prototype.toString.call(operand).slice(8, -1).toLowerCase();
     }
   } catch (e) {
     return 'unknown';
