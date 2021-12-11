@@ -1,4 +1,4 @@
-name: Type-detail Publish Package
+name: Type-detail Publish Package on Github
 
 on:
   release:
