@@ -1,6 +1,6 @@
 {
   "name": "@dunggramer/type-detail",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A function check real typeof value in JavaScript",
   "main": "index.js",
   "scripts": {
