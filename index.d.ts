@@ -1,2 +1,1 @@
-export { default, default as typeDetail } from './dist/type';
-
+export { default, default as typeDetail } from "./dist/type";

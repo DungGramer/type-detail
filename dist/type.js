@@ -1,1 +1,40 @@
-"use strict";function defineFunction(e,r){return"function"==typeof e&&r.test(Function.prototype.toString.call(e))}function isInteger(e){return"number"==typeof e&&isFinite(e)&&Math.floor(e)===e?"integer":"float"}function typeDetail(e){if(null===e)return"null";try{switch(typeof e){case"number":return isNaN(e)?"NaN":isFinite(e)?isInteger(e):"infinity";case"function":return defineFunction(e,/^class\s/)?"class":defineFunction(e,/^async\s/)?"promise":defineFunction(e,/function\*\s|\*\w+\s/)?"generator":"function";case"object":switch(!0){case Array.isArray(e)||e instanceof Array:return"array";case e instanceof Function:return"function";case e instanceof Date:return"date";case e instanceof RegExp:return"regExp";case e instanceof Error:return"error";case e instanceof Map:return"map";case e instanceof Set:return"set";case e instanceof WeakMap:return"weakMap";case e instanceof WeakSet:return"weakSet";case e instanceof Promise:return"promise";case e instanceof ArrayBuffer:return"arrayBuffer";case e instanceof Int8Array:return"int8Array";case e instanceof Uint8Array:return"uint8Array";case e instanceof Uint8ClampedArray:return"uint8ClampedArray";case e instanceof Int16Array:return"int16Array";case e instanceof Uint16Array:return"uint16Array";case e instanceof Int32Array:return"int32Array";case e instanceof Uint32Array:return"uint32Array";case e instanceof Float32Array:return"float32Array";case e instanceof Float64Array:return"float64Array";case e instanceof BigInt64Array:return"bigInt64Array";case e instanceof BigUint64Array:return"bigUint64Array";case e instanceof DataView:return"dataView";default:return"object"}default:return Object.prototype.toString.call(e).slice(8,-1).toLowerCase()}}catch(e){return"unknown"}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=typeDetail;
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TypeValue = exports.typeObject = void 0;
+exports.typeObject = {
+    function: "function",
+    date: "date",
+    regExp: "regExp",
+    error: "error",
+    map: "map",
+    set: "set",
+    weakMap: "weakMap",
+    weakSet: "weakSet",
+    promise: "promise",
+    arrayBuffer: "arrayBuffer",
+    int8Array: "int8Array",
+    uint8Array: "uint8Array",
+    uint8ClampedArray: "uint8ClampedArray",
+    int16Array: "int16Array",
+    uint16Array: "uint16Array",
+    int32Array: "int32Array",
+    uint32Array: "uint32Array",
+    float32Array: "float32Array",
+    float64Array: "float64Array",
+    bigInt64Array: "bigInt64Array",
+    bigUint64Array: "bigUint64Array",
+    dataView: "dataView",
+    blob: "blob",
+};
+exports.TypeValue = __assign(__assign({ null: "null", undefined: "undefined", NaN: "NaN", infinity: "infinity", integer: "integer", float: "float", string: "string", class: "class", generator: "generator" }, exports.typeObject), { unknown: "unknown" });

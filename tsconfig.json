@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
-      "es6"
+      "es6",
+      "ESNext",
+      "DOM"
     ],
     "outDir": "./dist",
     "resolveJsonModule": true,
@@ -17,6 +19,6 @@
     "node_modules", "**/*.spec.ts", "**/*.test.ts"
   ],
   "include": [
-    "src/type.ts"
+    "src/index.ts"
   ]
 }

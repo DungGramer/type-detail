@@ -1,4 +1,4 @@
-const type = require('../dist/type').default;
+const type = require('../dist/index').default;
 
 describe('typeof', () => {
   test('should integer', () => {
@@ -143,6 +143,10 @@ describe('typeof', () => {
 
   test('should symbol', () => {
     expect(type(Symbol('a'))).toBe('symbol');
+  });
+
+  test('should blob', () => {
+    expect(type(new Blob())).toBe('blob');
   });
 
   // test('should DOM', () => {
