@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
     "target": "es5",
     "lib": [
       "es6",
@@ -10,13 +11,12 @@
     "resolveJsonModule": true,
     "strict": true,
     "esModuleInterop": true,
-    "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
   "exclude": [
-    "node_modules", "**/*.spec.ts", "**/*.test.ts"
+    "node_modules", "**/*.spec.ts", "**/*.test.ts", "**/dist/*"
   ],
   "include": [
     "src/index.ts"
